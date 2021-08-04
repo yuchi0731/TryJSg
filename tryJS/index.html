@@ -6,11 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        alert('Hello World');
+        alert('Alert from head');
     </script>
+
+    <script src="common.js"></script>
+
 </head>
 <body>
-    <h1>Try JS</h1>
+    <h1 onclick="alert('Alert from h1')">Try JS</h1>
+    <h1 alert('Alert from h1')>Try JS</h1>
+    <script>
+        alert('Alert from body')
+    </script>
 </body>
 </html>
 
