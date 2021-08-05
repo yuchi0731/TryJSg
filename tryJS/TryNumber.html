@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num1 = 2;
+        var num2 = 5.4;
+        console.log(num1);
+        console.log(num2);
+
+        var numText1 = "011";
+        console.log(parseInt(numText1)); //parseInt() 將字串轉換為以十進位表示的整數。parseInt() 接受兩個參數。
+        console.log(parseInt(numText1 , 2));
+        console.log(parseInt(numText1 , 10));
+
+        var num2Text2 = "1.234567";
+        console.log(parseFloat(num2Text2, 10));// parseFloat() 將字串轉換為以十進位表示的浮點數。parseFloat() 僅接受一個參數。
+        console.log(num2Text2);
+
+        console.log(NaN);
+        console.log(1/0);
+        console.log(isNaN(1)); //判斷是不是NaN
+        console.log(isNaN(1/0));
+        console.log(isNaN("aa"));
+        console.log(isNaN("aa"));
+
+        var num3 =parseFloat("3.14", 10);
+        console.log(num3);
+
+        var num4 =parseFloat("3.1X", 10);
+        console.log(num4); //JS會跳過不認識的字做轉換
+
+
+    </script>
+
+
+</body>
+</html>

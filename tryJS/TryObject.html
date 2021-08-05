@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //通常為私有的變數就加底線
+        var obj1 = {           
+            _weight:500, 
+            "name": "Giant",
+            age: 21,
+            //Speak: function
+            "Speak": function(){
+                alert(123);
+            }
+        };
+
+        console.log(`${obj1.name}: ${obj1.age}`);
+        console.log(`${obj1["name"]}:${obj1["age"]}`);
+        console.log(obj1._weight);
+        //雖然可以存取到私有變數，但不該這麼做
+
+        //JS的foreach=for
+        for(key in obj1){
+            console.log(obj1[key]);
+        }
+
+    </script>
+</body>
+</html>

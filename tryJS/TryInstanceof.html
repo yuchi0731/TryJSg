@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function User(){};
+        const peter = new User();
+        peter instanceof User;
+
+        console.log(peter instanceof User);
+
+        
+        console.log(typeof 'Hello world');
+        console.log( typeof true);
+        console.log(typeof 123456);
+        console.log(typeof null);
+        console.log(typeof undefined);
+        console.log(typeof {name:'Jack'});
+        console.log(typeof function(){});
+        console.log(typeof [1,2,3]);
+        console.log(typeof NaN);
+        
+
+        typeof 'Hello world';
+        typeof true;
+        typeof 123456;
+        typeof null; //回傳object，JS沒有真正null的型別
+        typeof undefined;
+        typeof {name:'Jack'}; //object
+        typeof function(){};
+        typeof [1,2,3];
+        typeof NaN; 
+
+    </script>
+</body>
+</html>

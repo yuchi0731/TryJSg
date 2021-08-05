@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <!-- JS為讀一行跑一行 -->
+    <div id="div1">
+        <span class="c1">123</span>
+        <span>456</span>
+        <span class="c1 main">789</span>
+        <span>456</span>
+        <span>456</span>
+        <span>456</span>
+    </div>
+
+    <script>
+        //get element by id and set innerText
+        var d1 = document.getElementById("div1"); //定位到div1
+        d1.children[2].innerHTML="ABC"; //改div1第三項為ABC
+        
+        //get element by tag ,and set color
+        var list = document.getElementsByTagName("span");
+        var colorArr = ["red","blue","green"]
+
+        //因為是span設為陣列集合要用foreach才跑得出來
+        for (var i = 0; i<list.length;i++){
+            var item = list[i];
+            item.style = "color:" + colorArr[i % 3] + ";";
+           
+            item.onclick = function(){
+                console.log(i);
+                this.style = "color: yellow;";
+            };
+        }
+        //不在function中宣告的變數都當作全域變數windoe變數 所以 i 也會
+
+
+
+        //因為是c1設為陣列集合要用foreach才跑得出來
+        // get element by class ,and set backgroundcolor
+        var list2 = document.getElementsByClassName("c1");
+        for (var i = 0; i < list2.length; i++)
+        {
+            list2[i].style = "background-color: aqua;";
+        }
+    </script>
+
+</body>
+</html>
