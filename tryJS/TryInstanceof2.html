@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function User(){
+
+        };
+        function Manager(){
+
+        };
+
+        var subUser = new User();
+        console.log((subUser instanceof User));
+
+        function updateUserInfo(objUser){
+            if(objUser instanceof User){
+                console.log("is User");                
+            }
+            else if(objUser instanceof Manager){
+            console.log("is manager");}
+            else{
+                console.log("wrong.");
+            }        
+        }
+
+        updateUserInfo(subUser);
+        var manager = new Manager();
+        updateUserInfo(manager);
+
+        var d = new Date();
+        updateUserInfo(d);
+
+
+    </script>
+</body>
+</html>

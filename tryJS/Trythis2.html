@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<button type="button" style="color: aqua;" onclick="console.log(this.style['color'])">
+    click me
+</button> 
+<!-- this指向button，this.style['color'])指向aqua -->
+
+
+    <script>
+        var helper = {
+            Name: "helper",
+            Exec: function(){
+                console.log(this.Name);
+                console.log(this);
+
+                if (this != helper){
+                    console.log("OMG");
+                }
+                else{
+                    var self = this;
+                    console.log(self.Name);
+                }               
+            }
+        };
+
+        var car = {
+            Name: "Car",
+            Exec: function(){
+                helper.Exec();
+            },
+            Exec2: function(){
+                this.Exec();
+            }
+        };
+
+        //car["Exec"] = helper.Exec;
+        car.Exec2();
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //JS的this指向最靠近自己的instance
+        //觀察各情況下this代表為何
+        alert("alert");
+        window.alert("window.alert"); //基本上寫的alert都指向window
+        this.alert("this.alert");
+
+        //document.alert("document.alert");//找不到document會出錯
+
+        //設定一個Method觀察this為何
+        function Exec(){
+
+            console.log(window == this);   //true
+            console.log(document == this); //false
+            console.log(Exec == this);     //false
+            console.log(this);
+        }
+
+        Exec();
+
+        console.log("--------");
+
+        var car = {
+            color:"Red",
+            Exec: function(){
+                console.log(window == this);   //false
+                console.log(document == this); //false
+                console.log(Exec == this);     //false
+                console.log(car == this);      //true
+                console.log(this.color);       //因此處this指向了car即可代出color屬性
+            }
+        };
+        car.Exec();
+
+        console.log("--------");
+
+        //動態指定 Method 到物件
+        var car2 = {};          //設car2為空物件
+        car2["Exec"] = Exec;    //透過索引子加入
+        car2.Exec();            //false
+
+        console.log("--------");
+
+        var car3 = {
+            Name: "Car3",
+            Exec2: function(){
+                this.Exec();
+                console.log(this);
+            }
+        };
+        car3["Exec"] = Exec;
+        //car3.Exec();
+        car3.Exec2();        
+
+    </script>
+</body>
+</html>
