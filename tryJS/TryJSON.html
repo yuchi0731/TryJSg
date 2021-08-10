@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            name: '123'
+        };
+
+
+        //JSON兩個系統跨系統用來資料交換，屬性內容要用雙引號標起來
+        //就算沒有用雙引，瀏覽器上會自動轉變
+        var obj2 = {
+            "Name": "123",
+            'AGE': 21,
+            "Exec": function(){
+                alert(123);
+            }
+        };
+        console.log(obj2);
+
+        //序列化 JSON.stringify 把物件轉成字串
+        var str = JSON.stringify(obj2);
+        console.log(str);
+
+        var str2 = '{"Name":"123","AGE":21}';
+        var obj3 = JSON.parse(str2);
+        console.log(obj3);
+
+
+        var str3 = '{Name:"123","AGE":21}';
+        JSON.parse(str3);
+        
+    </script>
+</body>
+</html>
