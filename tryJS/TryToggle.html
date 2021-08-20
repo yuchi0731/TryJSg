@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ <script src="Scripts/jQuery-min-3.6.0.js"></script>
+<script>
+    $(function(){
+        $("#btn1").click(function(){
+            //$("#p1").toggle(true); //決定操作的標籤顯示true或隱藏false
+            // $("#p1,.pp").toggle(1500);
+
+            //$(".div1 > p").toggle(); //在div1中所有親的p標籤被隱藏起來
+            $(".div1  p").toggle();  //在div1中所有的p標籤被隱藏起來
+
+        });
+    });
+</script>
+
+</head>
+<body>
+        Yes:
+        <input type="radio" class="radio1" name="G1" value="Yes" />
+        No:
+        <input type="radio" class="radio1" name="G2" value="No" />
+
+            <p>If you click on me, I will disappear.</p>
+            <p class="pp">Click me away!</p>
+            <p class="pp">Click me away!</p>
+            <p class="pp">Click me away!</p>
+            <p class="pp">Click me away!</p>
+            <p class="pp"  id="p1">Click me too!</p>
+        <div class="div1">
+            <p>If you click on me, I will disappear.</p>
+            <p>If you click on me, I will disappear.</p>
+            <div>
+                <p>123</p>
+            </div>
+        </div>
+          
+          <button type="button" id="btn1">Click Me</button>
+</body>
+</html>

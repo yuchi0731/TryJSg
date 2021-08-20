@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        .redText{
+            color:red;
+        }
+
+        .greenBackGround{
+            background-color: darkseagreen;
+        }
+
+    </style>
+    <script src="Scripts/jQuery-min-3.6.0.js"></script>
+
+        <!-- addClass在元素裡面+class -->
+    <script>
+        $(function(){
+            $("#span1").addClass("redText").addClass("greenBackGround").addClass("SuccessFormat");
+
+            $("#btn1").click(function(){
+            //$("#span1").removeClass("redText");
+            $("#span1").toggleClass("redText");
+            });
+
+            $("#btn2").click(function(){
+            if($("#span1").hasClass("redText"))
+            alert("color of span1 is red.");
+            else
+            alert("normal text color.");
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+    <p>
+    一般文字
+    <span id="span1" class="">Span 文字</span>
+    一般文字
+</p>
+<button type="button" id="btn1">Toggle Me</button>
+<button type="button" id="btn2">Click Me</button>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Scripts/jQuery-min-3.6.0.js"></script>
+    <script>
+        $(function(){
+            // $("p").click(function(){});
+
+            var jqDom = $("p"); //鎖定為p標籤的物件，改其內容與顏色，寫法1
+            jqDom[0].innerHTML = "change jqDom[0] Text ";
+            function appendEvent(_jqDom){
+            jqDom.click(function(){alert("each of jqDom click alert");});};
+
+            function changeColor(_jqDom){
+            jqDom.css("color","red");}; //_jqDom為變數
+            
+            //啟用以上function 
+            appendEvent(jqDom);
+            changeColor(jqDom);
+
+            var htmlDom = document.getElementsByTagName("p"); //鎖定為p標籤的物件，改其內容與顏色，寫法2
+            htmlDom[1].innerHTML = "change jqDom[1] Text";
+            $(htmlDom[1]).css("color", "blue");
+
+            //將aaa文字加入body中並設為綠色
+            var tempObj = $("<p>aaa</a>");
+            tempObj.css("color", "green");
+            //$("body").append(tempObj);
+            tempObj.appendTo("body");//與上一句相同
+    });
+    </script>
+</head>
+<body>
+    <p>this is an apple.</p>
+    <p>this is a book.</p>
+</body>
+</html>
